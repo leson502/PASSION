@@ -21,7 +21,7 @@ from models import rfnet, mmformer, m2ftrans
 
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-from utils import Parser, criterions
+from utils import criterions
 from utils.predict import AverageMeter, test_dice_hd95_softmax
 from utils.lr_scheduler import LR_Scheduler, MultiEpochsDataLoader
 from utils.parser import setup
