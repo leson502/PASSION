@@ -30,7 +30,6 @@ from utils.parser import setup, set_seed
 args = args_parser()
 ## training setup
 setup(args, 'training')
-os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 ## checkpoints saving path
 ckpts = args.savepath
 os.makedirs(ckpts, exist_ok=True)
