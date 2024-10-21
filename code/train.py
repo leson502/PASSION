@@ -87,7 +87,8 @@ def main():
         model = m2ftrans.Model(num_cls=num_cls)
 
     device_ids = [int(i) for i in args.gpu.split(',')]
-    model = torch.nn.DataParallel(model, device_ids=device_ids).cuda()
+    print (device_ids)
+    model = torch.nn.DataParallel(model, device_ids=device_ids).to('cuda')
     model.module.mask_type = args.mask_type
     model.module.use_passion = args.use_passion
     ##########Setting learning schedule and optimizer
