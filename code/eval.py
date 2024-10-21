@@ -17,7 +17,7 @@ from data.datasets_nii import (Brats_loadall_test_nii,
                                Brats_loadall_val_nii)
 from data.transforms import *
 
-from models import rfnet_passion, mmformer_passion, m2ftrans_passion
+from models import rfnet, mmformer, m2ftrans
 
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
@@ -114,11 +114,11 @@ def main():
         exit(0)
 
     if args.model == 'm2ftrans_passion':
-        model = m2ftrans_passion.Model(num_cls=num_cls)
+        model = m2ftrans.Model(num_cls=num_cls)
     elif args.model == 'rfnet_passion':
-        model = rfnet_passion.Model(num_cls=num_cls)
+        model = rfnet.Model(num_cls=num_cls)
     elif args.model == 'mmformer_passion':
-        model = mmformer_passion.Model(num_cls=num_cls)
+        model = mmformer.Model(num_cls=num_cls)
 
     print (model)
     model = torch.nn.DataParallel(model).cuda()
