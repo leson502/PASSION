@@ -86,7 +86,6 @@ def main():
     elif args.model == 'm2ftrans':
         model = m2ftrans.Model(num_cls=num_cls)
 
-    print (model)
     model = torch.nn.DataParallel(model).cuda()
     model.module.mask_type = args.mask_type
     model.module.use_passion = args.use_passion
