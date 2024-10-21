@@ -113,11 +113,11 @@ def main():
         print ('dataset is error')
         exit(0)
 
-    if args.model == 'm2ftrans_passion':
+    if args.model == 'm2ftrans':
         model = m2ftrans.Model(num_cls=num_cls)
-    elif args.model == 'rfnet_passion':
+    elif args.model == 'rfnet':
         model = rfnet.Model(num_cls=num_cls)
-    elif args.model == 'mmformer_passion':
+    elif args.model == 'mmformer':
         model = mmformer.Model(num_cls=num_cls)
 
     print (model)
